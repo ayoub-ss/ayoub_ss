@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Converter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-lZbNIqDAZ9Ir+TUiEbpLZf+RbMxduIIZB4Yp5Kg4XPyo9blg/uD4eJcbIVtovMWE5eZW5xTUR5A0GrIojqh/Fw==" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .converter-box {
+      text-align: center;
+      margin: 20px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    @media (min-width: 600px) {
+      .converter-box {
+        width: 50%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .converter-box {
+        width: 30%;
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="converter-box">
+  <input type="text" id="inputValue" placeholder="Enter value">
+  <br>
+  <select id="fromSystem">
+    <option value="binary">Binary</option>
+    <option value="decimal">Decimal</option>
+    <option value="octal">Octal</option>
+    <option value="hexadecimal">Hexadecimal</option>
+  </select>
+  <br>
+  <button onclick="convert()">Convert</button>
+  <br>
+  <select id="toSystem">
+    <option value="binary">Binary</option>
+    <option value="decimal">Decimal</option>
+    <option value="octal">Octal</option>
+    <option value="hexadecimal">Hexadecimal</option>
+  </select>
+  <br>
+  <input type="text" id="outputValue" placeholder="Result" readonly>
+</div>
+
+<div class="social-icons">
+  <a href="https://www.instagram.com/ayoub_ss09/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+  <span>instagram: ayoub_ss09</span>
+</div>
+
+<script>
+  function convert() {
+    const inputValue = document.getElementById('inputValue').value;
+    const fromSystem = document.getElementById('fromSystem').value;
+    const toSystem = document.getElementById('toSystem').value;
+
+    let result;
+
+    switch (fromSystem) {
+      case 'binary':
+        result = parseInt(inputValue, 2);
+        break;
+      case 'decimal':
+        result = parseInt(inputValue, 10);
+        break;
+      case 'octal':
+        result = parseInt(inputValue, 8);
+        break;
+      case 'hexadecimal':
+        result = parseInt(inputValue, 16);
+        break;
+    }
+
+    switch (toSystem) {
+      case 'binary':
+        result = result.toString(2);
+        break;
+      case 'decimal':
+        result = result.toString(10);
+        break;
+      case 'octal':
+        result = result.toString(8);
+        break;
+      case 'hexadecimal':
+        result = result.toString(16).toUpperCase();
+        break;
+    }
+
+    document.getElementById('outputValue').value = result;
+  }
+</script>
+
+</body>
+</html>
