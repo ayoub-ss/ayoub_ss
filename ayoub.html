@@ -28,7 +28,7 @@
       padding: 10px;
       margin: 10px;
     }
-
+   body { background-image: url(https://wallpapers.com/images/hd/coding-background-9izlympnd0ovmpli.jpg);}
     button {
       cursor: pointer;
     }
@@ -50,41 +50,252 @@
       align-items: center;
       justify-content: center;
       margin-top: 20px;
+    
+    text-decoration: none;
     }
-
+    a:link {
+      text-decoration: none;
+}
     .social-icon {
       font-size: 24px;
       margin-right: 10px;
     }
+    .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #020202;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(215, 215, 215);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+    .ab{color: white;
+        text-shadow:  1px 1px 2px rgb(249, 4, 4), 0 0 25px blue, 0 0 5px darkblue;
+}
+.input-group__input {
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-style: none;
+  outline: none;
+  height: calc(1em + 0.5em);
+  width: 100%;
+  padding: 0.8em 1em;
+  border: 0.25em solid transparent;
+  background-image: linear-gradient(#000, #000), linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 1.8em;
+  background-size: 200% 100%;
+  transition: background-position 0.8s ease-out;
+}
+.input-group__input:hover {
+  background-position: 100% 0;
+}
+.input-group__input:focus {
+  outline: 2px dashed #ad2b89;
+  outline-offset: 0.5em;
+}
+.input-group__input2 {
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-style: none;
+  outline: none;
+  height: calc(1em + 0.5em);
+  width: 100%;
+  padding: 0.8em 1em;
+  border: 0.25em solid transparent;
+  background-image: linear-gradient(#000, #000), linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 1.8em;
+  background-size: 200% 100%;
+  transition: background-position 0.8s ease-out;
+}
+.input-group__input2:hover {
+  background-position: 100% 0;
+}
+.input-group__input2:focus {
+  outline: 2px dashed #ad2b89;
+  outline-offset: 0.5em;
+}
+a {
+  
+    display: inline-block;
+    padding: 15px 30px;
+    color: #2196f3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+
+
+a:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+   
+}
+
+
+a span {
+    position: absolute;
+    display: block;
+}
+
+
+
+
+a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+
+
+a:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+}
+
+
+a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+
+
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+
+
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
   </style>
 </head>
 <body>
-
+<div class="ab"><h1>Number Converter </h1>
+</div>
+<br>
+<br>
 <div class="converter-box">
-  <input type="text" id="inputValue" placeholder="Enter value">
+  <input type="text" id="inputValue" placeholder="Enter value" class="input-group__input">
   <br>
+  <div class="selectbox">
   <select id="fromSystem">
     <option value="binary">Binary</option>
     <option value="decimal">Decimal</option>
     <option value="octal">Octal</option>
     <option value="hexadecimal">Hexadecimal</option>
-  </select>
+  </select></div>
   <br>
-  <button onclick="convert()">Convert</button>
+  <button onclick="convert()" class="glow-on-hover">Convert</button>
   <br>
-  <select id="toSystem">
+  <div class="selectbox">
+     <select id="toSystem">
     <option value="binary">Binary</option>
     <option value="decimal">Decimal</option>
     <option value="octal">Octal</option>
     <option value="hexadecimal">Hexadecimal</option>
-  </select>
+  </select></div>
   <br>
-  <input type="text" id="outputValue" placeholder="Result" readonly>
+  <input type="text" id="outputValue" placeholder="Result" readonly class="input-group__input2">
 </div>
 
 <div class="social-icons">
-  <a href="https://www.instagram.com/ayoub_ss09/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-  <span>instagram: ayoub_ss09</span>
+  <a href="https://www.instagram.com/ayoub_ss09/" target="_blank" class="social-icon"> instagram: ayoub_ss09 <i class="fab fa-instagram"></i></a>
 </div>
 
 <script>
